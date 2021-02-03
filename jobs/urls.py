@@ -11,8 +11,11 @@ urlpatterns = [
 	path('FREELANCE/', views.FREELANCE, name="FREELANCE"),
 	path('REMOTE_ALL_JOBS/', views.REMOTE_ALL_JOBS, name="REMOTE"),
 	path('alljobs/', views.alljobs, name='alljobs'),
-  	path('heir/', views.heir, name="heir"),
+  	path('Hire_developers/', views.Hire_developers, name="Hire_developers"),
    	path('file_mode/', views.file_mode, name='file_mode'),
+	path('developer_profile/', views.developer_profile, name='developer_profile')
     
+
+
 
 ]

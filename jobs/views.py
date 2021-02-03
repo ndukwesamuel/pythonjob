@@ -7,15 +7,15 @@ from jobs.forms import *
 from django.shortcuts import render
 
 
-def heir(request):
-    form= CompanyForm(request.POST or None, request.FILES or None)
+def Hire_developers(request):
+    form = CompanyForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         print('oooo')
         form.save()
         print('oooo')
 
     context = {'form':form}
-    return render(request, 'heir.html', context)
+    return render(request, 'Hire_developers.html', context)
 
 def file_mode(request):
     form= FileForm(request.POST or None, request.FILES or None)
@@ -30,6 +30,11 @@ def file_mode(request):
  
 def home(request):
     return render(request, 'index.html' )
+
+
+def developer_profile(request):
+
+    return render(request, 'developer_profile.html' )
 
 
 def FULL_TIME(request):
