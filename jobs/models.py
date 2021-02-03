@@ -18,26 +18,7 @@ Level= (
         	('Lead', 'Lead'),
             ('Manager', 'Manager'),
 			)
-
-class photo(models.Model):
-    name= models.CharField(max_length=500)
-
-    videofile= models.FileField(upload_to='images/', null=True, verbose_name="")
-
-    def __str__(self):
-        return self.name + ": " + str(self.videofile)
-
-class File(models.Model):
-    name= models.CharField(max_length=500)
-    filepath= models.FileField(upload_to='files/', null=True, verbose_name="")
-
-    def __str__(self):
-        return self.name + ": " + str(self.filepath)
-
-
-
-class developer(models.Model):
-    Job_search_status = (
+Job_search_status = (
 			('I am looking for a Vue.js job', 'I am looking for a Vue.js job'),
 			('Open, but not looking', 'Open, but not looking'),
             ('Not looking for a job', 'Not looking for a job'),
@@ -46,9 +27,12 @@ class developer(models.Model):
 
 
 
+class developer(models.Model):
+
     name = models.CharField(max_length=100, null=True)
     Describe_yourself = models.TextField( null=True)
     Location = models.CharField(max_length=200, null=True)
+    profile_pic= models.FileField(upload_to='images/', null=True,)
     Job_preferences = models.CharField(max_length=100, null=True, choices=Job_search_status)
     Level_of_seniority = models.CharField(max_length=100, null=True, choices=Level)
     Job = models.CharField(max_length=100, null=True, choices=Job_type)

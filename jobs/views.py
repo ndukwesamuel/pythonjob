@@ -33,8 +33,13 @@ def home(request):
 
 
 def developer_profile(request):
+    form= DeveloperForm(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        form.save()
 
-    return render(request, 'developer_profile.html' )
+
+    context = {'form':form}
+    return render(request, 'developer_profile.html', context )
 
 
 def FULL_TIME(request):

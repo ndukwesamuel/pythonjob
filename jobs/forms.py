@@ -6,16 +6,6 @@ from jobs.models import *
 
 
 
-class ImageForm(forms.ModelForm):
-    class Meta:
-        model= photo
-        fields= ["name", "videofile"]
-
-class FileForm(forms.ModelForm):
-    class Meta:
-        model= File
-        fields= ["name", "filepath"]
-
 class DeveloperForm(forms.ModelForm):
     class Meta:
         model= developer
