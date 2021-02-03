@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+
+
+<section class="index">
+    <section class="index_se1">
+
+        <div class="container index_se1_div_1">
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-sm-10">        
+                    <h1>    Hire expert Vue.js developers & find Vue.js jobs</h1>
+                    <h3>    Sign up and post a job or create your developer profile.
+                            We will find offers / candidates for you!</h3>
+                        <div>
+                            <button class="btn btn-success">create a developer profile</button>
+                            <button class="btn btn-primary">post a vue job  </button>
+                        </div>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+                    
+        <div>
+                
+            </div>
+
+        
+        
+        
+        
+        
+        </div>        
+    
+        <div class="row"> 
+
+            <div class="col-md-2"></div>
+            <div class="col-sm-8">
+                <div style="text-align: center;">
+                    <a href="{% url 'fultime'   %}"><button>FULL-TIME </button></a>
+                    <a href="{% url 'PARTTIME' %}"><button>PART-TIME</button></a>
+                    <a href="{% url 'FREELANCE'%}"><button>FREELANCE</button></a>
+                    <a href="{%url 'REMOTE' %}"><button>REMOTE</button></a>
+                    <a href="{% url 'alljobs' %}"><button> ALL JOBS</button></a>
+
+                    
+
+       
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+
+        </div>
+    </section>
+
+
+  <section class="index_sec2">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-1">Lorem ipsum dolor sit amet consectetur  </div>
+                <div class="col-md-8">
+                    {%for company in companys  %}
+                        <div>{{company.name}}</div>
+                       <img src="{{company.Company_logo.url}}" alt="">
+                        <div>{{company.website}}</div>
+                        <div>{{company.Job_description}}</div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam id esse tempore reprehenderit consectetur? Temporibus impedit nihil magni quae quisquam voluptatibus vel ut suscipit aut ipsam? Corporis quis inventore esse.</div>
+
+            </div>
+
+        </div>
+
+    </section>  
+
+
+    <section class="index_sec3">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-1"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia architecto laborum mollitia rerum blanditiis, esse est praesentium ab dolore eum vel quisquam at harum maiores, expedita tempore reiciendis enim officiis!</div>
+                <div class="col-md-9">
+                    <h2>Try our third party job search</h2>
+                    <p>Still did not find a job matching your needs? We are partnering with some of the most important job search engines to help you find the right position. Use the form below to filter through hundreds of Vue.js related openings:</p>
+                </div>
+
+                <div class="col-md-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam id esse tempore reprehenderit consectetur? Temporibus impedit nihil magni quae quisquam voluptatibus vel ut suscipit aut ipsam? Corporis quis inventore esse.</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="index_sec3">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-sm-8"> 
+                <div class="row">
+                    <h1 style="text-align: center;">Find Vue.js jobs by location</h1>
+                    <div class="col-lg-2"></div>
+                    <div class="col-md-4">
+                        Popular cities
+                        Vue.js jobs in New York
+                        Vue.js jobs in London
+                        Vue.js jobs in Paris
+                    </div>
+                    <div class="col-md-4">
+                        Filter by job type
+                        Full-time Vue.js jobs
+                        Part-time Vue.js jobs
+                        Freelance Vue.js jobs
+                        Internship Vue.js jobs
+                        Remote Vue.js jobs
+                    </div>
+                    <div class="col-lg-2"></div>
+
+                </div>
+                               
+            </div>
+            <div class="col-lg-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facere minima animi. Doloribus quae placeat magni dicta et qui unde maiores obcaecati</div>
+
+        </div>
+
+    </section>
+
+
+    <section class="index_sec3">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-sm-8"> 
+              <h1>  Subscribe to our newsletter
+                Get the best of our listings into your inbox. Issued weekly.
+                
+                Name
+                Your email
+                ✋️ We promise to respect your inbox. Subscribe!</h1>
+                               
+            </div>
+            <div class="col-lg-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facere minima animi. Doloribus quae placeat magni dicta et qui unde maiores obcaecati</div>
+
+        </div>
+
+    </section>
+
+
+</section>
+
+<!--  -->
+
+{% endblock content %}
