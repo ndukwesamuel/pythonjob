@@ -8,7 +8,7 @@ from django.shortcuts import render
 
 
 def heir(request):
-    form= ImageForm(request.POST or None, request.FILES or None)
+    form= CompanyForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         print('oooo')
         form.save()
@@ -24,11 +24,10 @@ def file_mode(request):
         form.save()
         print('oooo')
 
-    context = {'form':form}
+    context = {'form':form},
     return render(request, 'heir.html', context)
 
  
-
 def home(request):
     return render(request, 'index.html' )
 
