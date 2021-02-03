@@ -38,31 +38,35 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-
+    # django allauth
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+
     'jobs',
 
    
 ]
 
-
 SITE_ID = 1
 
-# Provider specific settings
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
-        'APP': {
-            'client_id': '123',
-            'secret': '456',
-            'key': ''
-        }
-    }
-}
+LOGIN_REDIRECT_URL = '/'
+
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_UNIQUE =True
+
+# if it on the live server 
+# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+if DEBUG:
+    EMAIL_BACKEND ='django.core.mail.backends.dummy.EmailBackend'
+
+else:
+    EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+
+
+
 
 
 MIDDLEWARE = [
