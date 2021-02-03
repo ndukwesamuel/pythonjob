@@ -44,8 +44,14 @@ class developer(models.Model):
     def __str__(self):
         return self.name
 
+
+class Tag(models.Model):
+    name = models.CharField(max_length=200, null= True)
+
+    def __str__(self):
+        return self.name
+
 class Company_detail(models.Model):
-    
     Company_name = models.CharField(max_length=100, null=True)
     Company_logo= models.ImageField(upload_to='images/', null=True,)
     Company_Describe = models.TextField( null=True)
@@ -63,9 +69,17 @@ class Company_Creat_Job(models.Model):
     How_to_apply = models.TextField()
     Application_target = models.CharField(max_length=200, null=True)
     Location = models.CharField(max_length=100, null=True)
+    tags = models.ManyToManyField(Tag)
 
 
 
 
     def __str__(self):
-        return self
+        return self.company_detail
+
+
+class newsletter(models.Model):
+    name= models.CharField(max_length=100, null=True)
+    email= models.CharField(max_length=100, null=True)
+    def __str__(self):
+        return self.email
