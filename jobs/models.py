@@ -71,11 +71,8 @@ class Company_Creat_Job(models.Model):
     Location = models.CharField(max_length=100, null=True)
     tags = models.ManyToManyField(Tag)
 
-
-
-
     def __str__(self):
-        return self.company_detail
+        return self.company_detail.Company_name
 
 
 class newsletter(models.Model):

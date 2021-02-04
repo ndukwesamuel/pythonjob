@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+
+<section class="job_details_sec1">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2"><img src="{{job.company_detail.Company_logo.url}}" alt=""  width="100">
+            </div>
+
+            <div class="col-sm-10">
+               <h1> {{job.Job_title}} </h1> 
+                   <div>{{job.company_detail.Company_name}}
+                       <span>
+                        <a href="{{job.company_detail.website}}">{{job.company_detail.website}}</a>
+
+                       </span>
+                   </div>
+            </div>
+        </div>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi magnam quisquam quia voluptate minima nesciunt. Vitae rerum placeat ullam debitis ea dignissimos cum nihil odio corrupti corporis. Commodi, corporis dolorum?
+    </div>
+    
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi magnam quisquam quia voluptate minima nesciunt. Vitae rerum placeat ullam debitis ea dignissimos cum nihil odio corrupti corporis. Commodi, corporis dolorum?
+   
+</section>
+
+<section class="job_details_sec2">
+    job_details_sec2job_details_sec2job_details_sec2job_details_sec2job_details_sec2
+    Job typeTemporaryPosted 16 hours ago
+
+    job_details_sec2job_details_sec2job_details_sec2job_details_sec2job_details_sec2
+    Job typeTemporaryPosted 16 hours ago
+</section>
+
+<section class="job_details_sec3">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+              
+    <div>{{job.company_detail.Company_Describe}}</div>
+    <div>{{job.company_detail.website}}</div>
+    <div>  </div>
+    <div>{{job.Job}}    </div>
+    <div>{{job.Level_of_seniority}}    </div>
+    <div>{{job.Job_description}}    </div>
+    <div>{{job.How_to_apply}}    </div>
+    <div>{{job.Application_target}}    </div>
+    <div>{{job.Location}}    </div>
+
+            </div>
+
+            <div class="col-md-2">
+                job_details_sec2job_details_sec2job_details_sec2job_details_sec2job_details_sec2
+                Job typeTemporaryPosted 16 hours ago
+            
+                job_details_sec2job_details_sec2job_details_sec2job_details_sec2job_details_sec2
+                Job typeTemporaryPosted 16 hours ago
+
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+
+
+
+        
+
+
+    </div>
+
+</section>
+
+
+
+{% endblock content %}
+
+

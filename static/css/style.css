@@ -18,3 +18,16 @@
     color: green;
 }
 
+
+.job{
+    border: black solid 3px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.job_details_sec2{
+    border: solid  0px;
+    background-color: grey;
+}
+

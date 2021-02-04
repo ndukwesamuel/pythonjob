@@ -1,1 +1,15 @@
-FULL-TIME
+FULL-TIME            
+        {%for job in fulltime  %}
+<div class="job">
+    <a href="{% url 'job_details' job.id %}"><div>{{job.company_detail.Company_name}}</div></a>
+    
+    <div>{{job.Job_title}}</div>
+    <div>{{job.Job_description}}    </div>
+    <div>{{job.Job}}    </div>
+    <div>{{job.Location}}    </div>
+   
+
+</div>
+
+
+{% endfor %}

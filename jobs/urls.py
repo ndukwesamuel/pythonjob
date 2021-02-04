@@ -13,7 +13,9 @@ urlpatterns = [
 	path('alljobs/', views.alljobs, name='alljobs'),
   	path('Hire_developers/', views.Hire_developers, name="Hire_developers"),
    	path('file_mode/', views.file_mode, name='file_mode'),
-	path('developer_profile/', views.developer_profile, name='developer_profile')
+	path('developer_profile/', views.developer_profile, name='developer_profile'),
+	
+	path('job_details/<str:id_test>', views.job_details, name='job_details')
     
 
 

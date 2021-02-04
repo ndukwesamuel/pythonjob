@@ -15,3 +15,9 @@ class CompanyForm(forms.ModelForm):
     class Meta:
         model= Company_detail
         fields= '__all__'
+
+
+class Company_Creat_Job_form(forms.ModelForm):
+    class Meta:
+        model= Company_Creat_Job
+        fields= '__all__'

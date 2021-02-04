@@ -63,11 +63,19 @@
 
                 <div class="col-md-1">Lorem ipsum dolor sit amet consectetur  </div>
                 <div class="col-md-8">
-                    {%for company in companys  %}
-                        <div>{{company.name}}</div>
-                       <img src="{{company.Company_logo.url}}" alt="">
-                        <div>{{company.website}}</div>
-                        <div>{{company.Job_description}}</div>
+                    {%for job in jobs  %}
+                        <div class="job">
+                            <a href="{% url 'job_details' job.id %}"><div>{{job.company_detail.Company_name}}</div></a>
+                            
+                            <div>{{job.Job_title}}</div>
+                            <div>{{job.Job_description}}    </div>
+                            <div>{{job.Job}}    </div>
+                            <div>{{job.Location}}    </div>
+                           
+
+                        </div>
+                    
+
                     {% endfor %}
                 </div>
                 <div class="col-md-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam id esse tempore reprehenderit consectetur? Temporibus impedit nihil magni quae quisquam voluptatibus vel ut suscipit aut ipsam? Corporis quis inventore esse.</div>
