@@ -56,12 +56,6 @@ class Company_detail(models.Model):
     Company_logo= models.ImageField(upload_to='images/', null=True,)
     Company_Describe = models.TextField( null=True)
     website = models.CharField(max_length=200, null=True)
-    def __str__(self):
-        return self.Company_name
-
-
-class Company_Creat_Job(models.Model):
-    company_detail = models.ForeignKey(Company_detail, null=True, on_delete= models.SET_NULL)
     Job_title = models.CharField(max_length=100, null=True)
     Job = models.CharField(max_length=100, null=True, choices=Job_type)
     Level_of_seniority = models.CharField(max_length=100, null=True, choices=Level)
@@ -71,9 +65,10 @@ class Company_Creat_Job(models.Model):
     Location = models.CharField(max_length=100, null=True)
     tags = models.ManyToManyField(Tag)
 
-    def __str__(self):
-        return self.company_detail.Company_name
 
+
+    def __str__(self):
+        return self.Company_name
 
 class newsletter(models.Model):
     name= models.CharField(max_length=100, null=True)

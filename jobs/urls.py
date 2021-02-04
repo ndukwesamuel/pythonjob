@@ -15,9 +15,9 @@ urlpatterns = [
    	path('file_mode/', views.file_mode, name='file_mode'),
 	path('developer_profile/', views.developer_profile, name='developer_profile'),
 	
-	path('job_details/<str:id_test>', views.job_details, name='job_details')
-    
-
+	path('job_details/<str:id_test>', views.job_details, name='job_details'),
+	# path('fill_job/', views.fill_job, name='fill_job')
+	
 
 
 ]

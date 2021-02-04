@@ -18,12 +18,13 @@ def Hire_developers(request):
     context = {'form':form}
     return render(request, 'Hire_developers.html', context)
 
-def fill_job(request):
-    form = Company_Creat_Job_form(request.POST or None, request.FILES or None)
-
-
-    context= {'form':form}
-    return render(request, 'fill_job.html', context)
+# def fill_job(request):
+#     sam = request.user
+#     print(sam)
+#     order = Order.objects.get(user=self.request.user, ordered=False)
+#     form = Company_Creat_Job_form(request.POST or None, request.FILES or None, instance=sam)
+#     context= {'form':form}
+#     return render(request, 'fill_job.html', context)
 
 
 def file_mode(request):
@@ -81,5 +82,5 @@ def REMOTE_ALL_JOBS(request):
     context = {'remote':remote}
     return render(request,'remote.html')
 def alljobs(request):
-    
+
     return render(request, 'alljobs.html')

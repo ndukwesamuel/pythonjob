@@ -17,7 +17,7 @@ class CompanyForm(forms.ModelForm):
         fields= '__all__'
 
 
-class Company_Creat_Job_form(forms.ModelForm):
-    class Meta:
-        model= Company_Creat_Job
-        fields= '__all__'
+# class Company_Creat_Job_form(forms.ModelForm):
+#     class Meta:
+#         model= Company_Creat_Job
+#         fields= '__all__'
