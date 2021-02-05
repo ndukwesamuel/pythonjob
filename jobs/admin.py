@@ -1,6 +1,5 @@
 from django.contrib import admin
 
-
 from jobs.models import developer,Company_detail,Tag
 #  Job_post,Company,File
 
@@ -9,6 +8,6 @@ from jobs.models import developer,Company_detail,Tag
 
 admin.site.register(developer)
 admin.site.register(Company_detail)
-# admin.site.register(Company_Creat_Job)
+# admin.site.register(Customer)
 admin.site.register(Tag)
     

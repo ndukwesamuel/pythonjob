@@ -10,6 +10,7 @@ class DeveloperForm(forms.ModelForm):
     class Meta:
         model= developer
         fields= '__all__'
+        # exclude =  ['user']
 
 class CompanyForm(forms.ModelForm):
     class Meta:

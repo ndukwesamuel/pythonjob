@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib import  messages
 
+
 from jobs.models import *
 from jobs.forms import *
 
@@ -39,15 +40,20 @@ def file_mode(request):
 
  
 def home(request):
-    jobs = Company_Creat_Job.objects.all()
+    jobs = Company_detail.objects.all()
     for i in jobs:
         print(i.Job)
+
+
+    print(sam)
 
     context =  {'jobs':jobs}
     return render(request, 'index.html',context )
 
 def job_details(request, id_test):
     job = Company_Creat_Job.objects.get(id=id_test)
+
+    
  
     context =  {'job':job}
 
@@ -56,9 +62,13 @@ def job_details(request, id_test):
 
 
 def developer_profile(request):
-    form= DeveloperForm(request.POST or None, request.FILES or None)
+    customer = request.user
+    form= DeveloperForm(request.POST or None, request.FILES or None,instance=customer )
+    print(form)
     if form.is_valid():
+        print(form)
         form.save()
+        print(form)
 
 
     context = {'form':form}
