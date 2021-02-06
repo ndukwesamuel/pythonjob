@@ -16,7 +16,7 @@ urlpatterns = [
 	path('developer_profile/', views.developer_profile, name='developer_profile'),
 	
 	path('job_details/<str:id_test>', views.job_details, name='job_details'),
-	# path('fill_job/', views.fill_job, name='fill_job')
+	path('company_profile/', views.company_profile, name='company_profile')
 	
 
 

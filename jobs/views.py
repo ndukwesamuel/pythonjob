@@ -1,7 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib import  messages
 
-
 from jobs.models import *
 from jobs.forms import *
 
@@ -9,23 +8,9 @@ from django.shortcuts import render
 
 
 def Hire_developers(request):
-    form = CompanyForm(request.POST or None, request.FILES or None)
-    if form.is_valid():
-        print('oooo')
-        form.save()
-        print('oooo')
-        return redirect('fill_job')
 
-    context = {'form':form}
-    return render(request, 'Hire_developers.html', context)
+    return render(request, 'Hire_developers.html')
 
-# def fill_job(request):
-#     sam = request.user
-#     print(sam)
-#     order = Order.objects.get(user=self.request.user, ordered=False)
-#     form = Company_Creat_Job_form(request.POST or None, request.FILES or None, instance=sam)
-#     context= {'form':form}
-#     return render(request, 'fill_job.html', context)
 
 
 def file_mode(request):
@@ -42,18 +27,27 @@ def file_mode(request):
 def home(request):
     jobs = Company_detail.objects.all()
     for i in jobs:
-        print(i.Job)
-
-
-    print(sam)
+        print(i.Company_name)
 
     context =  {'jobs':jobs}
     return render(request, 'index.html',context )
 
+def company_profile(request):
+    company = test_detail.objects.get(user=request.user)
+    print(company.user)
+    form = company_profile(request.POST or None, request.FILES or None)
+    # form= company_profile(request.POST or None, request.FILES or None, instance=company)
+    if form.is_valid():
+        form.save()
+
+    context = {'form':form}
+
+    return render(request, 'companyprofile.html',context )
+
+
+
 def job_details(request, id_test):
     job = Company_Creat_Job.objects.get(id=id_test)
-
-    
  
     context =  {'job':job}
 
@@ -62,14 +56,10 @@ def job_details(request, id_test):
 
 
 def developer_profile(request):
-    customer = request.user
-    form= DeveloperForm(request.POST or None, request.FILES or None,instance=customer )
-    print(form)
+    dev = developer.objects.get(user=request.user)
+    form= DeveloperForm(request.POST or None, request.FILES or None, instance=dev)
     if form.is_valid():
-        print(form)
         form.save()
-        print(form)
-
 
     context = {'form':form}
     return render(request, 'developer_profile.html', context )
