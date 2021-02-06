@@ -2,7 +2,7 @@ from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
-from jobs.models import *
+from jobs.models import developer,test_detail,Company_detail 
 
 
 
@@ -20,5 +20,6 @@ class CompanyForm(forms.ModelForm):
 
 class company_profile(forms.ModelForm):
     class Meta:
+        models =  test_detail
         fields= '__all__'
-        exclude =  ['user']
+        # exclude =  ['user']

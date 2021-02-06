@@ -33,10 +33,10 @@ def home(request):
     return render(request, 'index.html',context )
 
 def company_profile(request):
-    company = test_detail.objects.get(user=request.user)
-    print(company.user)
-    form = company_profile(request.POST or None, request.FILES or None)
-    # form= company_profile(request.POST or None, request.FILES or None, instance=company)
+    com = test_detail.developer.objects.get(user=request.user)
+    print(com)
+    
+    form= company_profile(request.POST or None, request.FILES or None)
     if form.is_valid():
         form.save()
 

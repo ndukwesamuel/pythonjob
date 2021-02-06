@@ -38,14 +38,15 @@ Job_search_status = (
             ('Not looking for a job', 'Not looking for a job'),
 			) 
 
-class Customer(models.Model):
-    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100, blank=True)
-    Describe_yourself = models.TextField( blank=True)
-    Location = models.CharField(max_length=200, blank=True)
+# class Customer(models.Model):
+#     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+#     name = models.CharField(max_length=100, blank=True)
+#     Describe_yourself = models.TextField( blank=True)
+#     Location = models.CharField(max_length=200, blank=True)
  
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
+
 
 
 
@@ -53,7 +54,7 @@ class Customer(models.Model):
 
 class developer(models.Model):
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100,)
+    name = models.CharField(max_length=100,null=True, default=user)
     Describe_yourself = models.TextField( null=True)
     Location = models.CharField(max_length=200, null=True)
     profile_pic= models.FileField(upload_to='images/', null=True,)
@@ -100,9 +101,10 @@ class newsletter(models.Model):
     def __str__(self):
         return self.email
 
+
 class test_detail(models.Model):
-    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
-    Company_name = models.CharField(max_length=100, null=True)
+    developer = models.ForeignKey(developer, null=True, blank=True, on_delete=models.CASCADE)
+    Company_name = models.CharField(max_length=100, null=True, default='developer')
     Company_logo= models.ImageField(upload_to='images/', null=True,)
     Company_Describe = models.TextField( null=True)
     website = models.CharField(max_length=200, null=True)
@@ -110,3 +112,4 @@ class test_detail(models.Model):
 
     def __str__(self):
         return self.Company_name
+
