@@ -16,7 +16,7 @@
                     <h1>    Hire expert Vue.js developers & find Vue.js jobs</h1>
                     <h3>    Sign up and post a job or create your developer profile.
                             We will find offers / candidates for you!</h3>
-                        <div>
+                        <div class="index_se1_div_1_btn">
                             <button class="btn btn-success">create a developer profile</button>
                             <button class="btn btn-primary">post a vue job  </button>
                         </div>
@@ -60,17 +60,23 @@
   <section class="index_sec2">
         <div class="container">
             <div class="row">
-
                 <div class="col-md-1">Lorem ipsum dolor sit amet consectetur  </div>
                 <div class="col-md-8">
                     {%for job in jobs  %}
-                        <div class="job">
-                            <a href="{% url 'job_details' job.id %}"><div>{{job.company_detail.Company_name}}</div></a>
-                            
-                            <div>{{job.Company_name}}</div>
-                            <div>{{job.Company_logo}}    </div>
-                            <div>{{job.Company_name}}    </div>
-                            <div>{{job.Company_name}}    </div>
+                        <div class="index_sec2_job">
+                            <div class="row">
+                                <div class="col-sm-2 job_img">                            
+                                    <img src="{{job.Company_logo.url}}" alt="company logo" width="100">
+                                </div>
+                                <div class="col-sm-9">
+                                    <div>{{job.Job_title}}</div>
+                                    
+                                    <div>At {{job.Company_name}} -- {{job.Location}}-- {{job.Job}}</div>
+                                    <div>{{job.short_des}}</div>
+                                
+                                </div>
+
+                            </div>
                            
 
                         </div>
@@ -87,9 +93,8 @@
     </section>  
 
 
-    <section class="index_sec3">
+    <!-- <section class="index_sec3">
         <div class="container">
-
             <div class="row">
 
                 <div class="col-md-1"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia architecto laborum mollitia rerum blanditiis, esse est praesentium ab dolore eum vel quisquam at harum maiores, expedita tempore reiciendis enim officiis!</div>
@@ -104,7 +109,7 @@
 
         </div>
 
-    </section>
+    </section> -->
 
     <section class="index_sec3">
         <div class="row">
@@ -113,26 +118,30 @@
                 <div class="row">
                     <h1 style="text-align: center;">Find Vue.js jobs by location</h1>
                     <div class="col-lg-2"></div>
-                    <div class="col-md-4">
-                        Popular cities
-                        Vue.js jobs in New York
-                        Vue.js jobs in London
-                        Vue.js jobs in Paris
+                    <div class="col-md-4 index_sec3_row2">
+                        <p>Popular cities</p>
+                        <p>Vue.js jobs in New York</p>
+                       <p> Vue.js jobs in London</p>
+                       <p> Vue.js jobs in Paris</p>
                     </div>
-                    <div class="col-md-4">
-                        Filter by job type
-                        Full-time Vue.js jobs
-                        Part-time Vue.js jobs
-                        Freelance Vue.js jobs
-                        Internship Vue.js jobs
-                        Remote Vue.js jobs
+                    <div class="col-md-4 index_sec3_row2 ">
+                        <p>Filter by job type</p>
+                        <p>Full-time Vue.js jobs</p>
+                        <p>Part-time Vue.js jobs</p>
+                        <p>Freelance Vue.js jobs</p>
+                       <p> Internship Vue.js jobs</p>
+                        <p>Remote Vue.js jobs</p>
                     </div>
                     <div class="col-lg-2"></div>
 
                 </div>
                                
             </div>
-            <div class="col-lg-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facere minima animi. Doloribus quae placeat magni dicta et qui unde maiores obcaecati</div>
+            <div class="col-lg-2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Accusantium facere minima animi. Doloribus quae placeat
+                  magni dicta et qui unde maiores obcaecati
+            </div>
 
         </div>
 

@@ -6,53 +6,31 @@ from jobs.forms import *
 
 from django.shortcuts import render
 
-
-def Hire_developers(request):
-
-    return render(request, 'Hire_developers.html')
-
-
-
-def file_mode(request):
-    form= FileForm(request.POST or None, request.FILES or None)
-    if form.is_valid():
-        print('oooo')
-        form.save()
-        print('oooo')
-
-    context = {'form':form},
-    return render(request, 'heir.html', context)
-
  
+
+
+
+
 def home(request):
     jobs = Company_detail.objects.all()
-    for i in jobs:
-        print(i.Company_name)
+    # for i in jobs:
 
+    #     x=i.Job_description
+
+    #     print(x)
+        # test1 = "Do you want to work on a beautiful product? And are you passionate about development and do you want to team up with colleagues who also love what they do? Stop looking and join Co..."
+        # y = len(test1.split())
+        # print(y)
     context =  {'jobs':jobs}
     return render(request, 'index.html',context )
 
-def company_profile(request):
-    com = test_detail.developer.objects.get(user=request.user)
-    print(com)
-    
-    form= company_profile(request.POST or None, request.FILES or None)
+def Hire_developers(request):
+    form= CompanyForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         form.save()
 
     context = {'form':form}
-
-    return render(request, 'companyprofile.html',context )
-
-
-
-def job_details(request, id_test):
-    job = Company_Creat_Job.objects.get(id=id_test)
- 
-    context =  {'job':job}
-
-    return render(request, 'jobdetail.html',context )
-
+    return render(request, 'Hire_developers.html', context)
 
 
 def developer_profile(request):

@@ -54,7 +54,7 @@ Job_search_status = (
 
 class developer(models.Model):
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100,null=True, default=user)
+    name = models.CharField(max_length=100,null=True,)
     Describe_yourself = models.TextField( null=True)
     Location = models.CharField(max_length=200, null=True)
     profile_pic= models.FileField(upload_to='images/', null=True,)
@@ -84,6 +84,7 @@ class Company_detail(models.Model):
     Job_title = models.CharField(max_length=100, null=True)
     Job = models.CharField(max_length=100, null=True, choices=Job_type)
     Level_of_seniority = models.CharField(max_length=100, null=True, choices=Level)
+    short_des = models.CharField(max_length=100, null=True)
     Job_description = models.TextField(null=True)
     How_to_apply = models.TextField(null=True)
     Application_target = models.CharField(max_length=200, null=True)
@@ -102,14 +103,20 @@ class newsletter(models.Model):
         return self.email
 
 
-class test_detail(models.Model):
-    developer = models.ForeignKey(developer, null=True, blank=True, on_delete=models.CASCADE)
-    Company_name = models.CharField(max_length=100, null=True, default='developer')
-    Company_logo= models.ImageField(upload_to='images/', null=True,)
-    Company_Describe = models.TextField( null=True)
-    website = models.CharField(max_length=200, null=True)
+# class test_detail(models.Model):
+#     developer =   Company_Describe = models.TextField( null=True)
+#     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+#     Company_name = models.CharField(max_length=100, null=True)
+#     # Company_logo= models.ImageField(upload_to='images/', null=True,)
+#     Company_Describe = models.TextField( null=True)
+#     website = models.CharField(max_length=200, null=True)
+#     def __str__(self):
+#         return self.Company_name
 
-
-    def __str__(self):
-        return self.Company_name
-
+# class test(models.Model):
+#     dev = models.OneToOneField(developer, null=True, blank=True, on_delete=models.CASCADE)
+#     Company_name = models.CharField(max_length=100, null=True)
+#     Company_Describe = models.TextField( null=True)
+#     website = models.CharField(max_length=200, null=True)
+#     def __str__(self):
+#         return self.Company_name
