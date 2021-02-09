@@ -7,54 +7,9 @@
 
 
 <section class="index">
-    <section class="index_se1">
 
-        <div class="container index_se1_div_1">
-            <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-sm-10">        
-                    <h1>    Hire expert Vue.js developers & find Vue.js jobs</h1>
-                    <h3>    Sign up and post a job or create your developer profile.
-                            We will find offers / candidates for you!</h3>
-                        <div class="index_se1_div_1_btn">
-                            <button class="btn btn-success">create a developer profile</button>
-                            <button class="btn btn-primary">post a vue job  </button>
-                        </div>
-                </div>
-                <div class="col-lg-1"></div>
-            </div>
-                    
-        <div>
-                
-            </div>
-
-        
-        
-        
-        
-        
-        </div>        
-    
-        <div class="row"> 
-
-            <div class="col-md-2"></div>
-            <div class="col-sm-8">
-                <div style="text-align: center;">
-                    <a href="{% url 'fultime'   %}"><button>FULL-TIME </button></a>
-                    <a href="{% url 'PARTTIME' %}"><button>PART-TIME</button></a>
-                    <a href="{% url 'FREELANCE'%}"><button>FREELANCE</button></a>
-                    <a href="{%url 'REMOTE' %}"><button>REMOTE</button></a>
-                    <a href="{% url 'alljobs' %}"><button> ALL JOBS</button></a>
-
-                    
-
-       
-                </div>
-            </div>
-            <div class="col-md-2"></div>
-
-        </div>
-    </section>
+    {%  include 'sec.html' %}
+   
 
 
   <section class="index_sec2">
@@ -148,19 +103,45 @@
     </section>
 
 
-    <section class="index_sec3">
+<section class="index_sec4">
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-sm-8"> 
-              <h1>  Subscribe to our newsletter
-                Get the best of our listings into your inbox. Issued weekly.
+              <div><h2>  Subscribe to our newsletter</h2></div>
                 
-                Name
-                Your email
-                ✋️ We promise to respect your inbox. Subscribe!</h1>
-                               
+                <div>Get the best of our listings into your inbox. Issued weekly.
+                
+                    Name
+                    Your email
+                    ✋️ We promise to respect your inbox. Subscribe!</div>               
             </div>
             <div class="col-lg-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium facere minima animi. Doloribus quae placeat magni dicta et qui unde maiores obcaecati</div>
+
+        </div>
+
+</section>
+
+
+
+
+    <section class="index_sec3">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-sm-8 index_sec3_form"> 
+              <h1>  Subscribe to our newsletter</h1>
+              <p>Get the best of our listings into your inbox. Issued weekly.</p>
+                
+              <form action="" method="post">
+                  <input type="text" name="" id="" placeholder="Name">
+
+                  <input type="email" name="" id="" placeholder="Email">
+
+                  <input type="submit" value="YES PLEASE">
+                    <p> ✋️ We promise to respect your inbox. Subscribe!</p>
+                
+              </form>          
+            </div>
+            <div class="col-lg-2"></div>
 
         </div>
 

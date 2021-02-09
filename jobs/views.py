@@ -1,29 +1,24 @@
 from django.shortcuts import render,redirect
 from django.contrib import  messages
+ 
+from django.http import HttpResponse
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 
 from jobs.models import *
 from jobs.forms import *
 
 from django.shortcuts import render
+from django.contrib.auth.models import Group
 
  
-
-
-
-
 def home(request):
     jobs = Company_detail.objects.all()
-    # for i in jobs:
 
-    #     x=i.Job_description
-
-    #     print(x)
-        # test1 = "Do you want to work on a beautiful product? And are you passionate about development and do you want to team up with colleagues who also love what they do? Stop looking and join Co..."
-        # y = len(test1.split())
-        # print(y)
     context =  {'jobs':jobs}
     return render(request, 'index.html',context )
 
+@login_required(login_url='clicked')
 def Hire_developers(request):
     form= CompanyForm(request.POST or None, request.FILES or None)
     if form.is_valid():
@@ -32,7 +27,7 @@ def Hire_developers(request):
     context = {'form':form}
     return render(request, 'Hire_developers.html', context)
 
-
+@login_required(login_url='clicked')
 def developer_profile(request):
     dev = developer.objects.get(user=request.user)
     form= DeveloperForm(request.POST or None, request.FILES or None, instance=dev)
@@ -42,23 +37,51 @@ def developer_profile(request):
     context = {'form':form}
     return render(request, 'developer_profile.html', context )
 
-
 def FULL_TIME(request):
-    fulltime = Company_Creat_Job.objects.filter(tags__name="FULL-TIME")
-    context = {'fulltime':fulltime}
-    return render(request, 'fultime.html', context)
-def PART_TIME(request):
-    partime = Company_Creat_Job.objects.filter(tags__name="	PART-TIME")
-    context = {'partime':partime}
-    return render(request, 'partime.html', context)
-def  FREELANCE(request):
-    freelance = Company_Creat_Job.objects.filter(tags__name="FREELANCE")
-    context = {'freelance':freelance}
-    return render(request, 'freelance.html', context)
-def REMOTE_ALL_JOBS(request):
-    remote = Company_Creat_Job.objects.filter(tags__name="	REMOTE")
-    context = {'remote':remote}
-    return render(request,'remote.html')
-def alljobs(request):
+    jobs = Company_detail.objects.filter(tags__name="FULLTIME")
+    for i in jobs:
+        print(i.Company_name)
+    status = 'FULLTIME'
 
-    return render(request, 'alljobs.html')
+    context =  {'jobs':jobs, 'status':status,}
+    return render(request, 'status.html',context )
+
+
+def PART_TIME(request):
+    jobs = Company_detail.objects.filter(tags__name="PARTTIME")
+    for i in jobs:
+        print(i.Company_name)
+    status = 'PART TIME'
+
+    context =  {'jobs':jobs, 'status':status,}
+    return render(request, 'status.html',context )
+
+def FREELANCE(request):
+    jobs = Company_detail.objects.filter(tags__name="FREELANCE")
+    for i in jobs:
+        print(i.Company_name)
+    status = 'FREELANCE '
+
+    context =  {'jobs':jobs, 'status':status,}
+    return render(request, 'status.html',context )
+
+def REMOTE(request):
+    jobs = Company_detail.objects.filter(tags__name="REMOTE")
+    for i in jobs:
+        print(i.Company_name)
+    status = 'REMOTE '
+
+    context =  {'jobs':jobs, 'status':status,}
+    return render(request, 'status.html',context )
+
+
+def clicked(request):
+    return render(request, 'click.html')
+
+def job_detail(request, pk_test):
+    job = Company_detail.objects.get(id=pk_test)
+    print('working ')
+    print(job.Company_name)
+
+    context =  {'job':job,}
+    return render(request, 'jobdetail.html', context)

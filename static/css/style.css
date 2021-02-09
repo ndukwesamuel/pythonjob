@@ -48,7 +48,6 @@
 
 .index_sec3{
     background:   #34495E;
-    border: black solid 3px;
     color: white;
     padding-top: 5em;
     padding-bottom: 5em;
@@ -60,3 +59,26 @@
     font-size: 20px;
 
 }
+
+.index_sec3_form{
+    text-align: center;
+    /* background-color: orange; */
+}
+
+.HIRE_sec_div_form {
+    background-color: blue;
+    border-radius: 30px;
+}
+
+
+.Company_name{
+    color: white;
+  
+}
+
+
+.status{
+    margin-bottom: 2em;
+}
+
+
