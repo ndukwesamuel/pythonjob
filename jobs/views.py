@@ -34,7 +34,7 @@ def developer_profile(request):
     if form.is_valid():
         form.save()
 
-    context = {'form':form}
+    context = {'form':form, 'dev':dev}
     return render(request, 'developer_profile.html', context )
 
 def FULL_TIME(request):

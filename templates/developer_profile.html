@@ -7,7 +7,7 @@
 <div>
     <h1>Developer postfolio</h1></div>
     {{request.user}}
-<div>
+<!-- <div>
 <form enctype="multipart/form-data" method="POST" action="">
 {% csrf_token %}
 <div class="">{{ form.as_p }}
@@ -15,6 +15,29 @@
 </div>
 
 </form>
+</div> -->
+
+
+jkdjhdfjh
+
+<div class="row">
+    <div class="col-md-7">
+        <img src="{{dev.profile_pic.url}}" alt="" width="100">
+    </div>
+    <div class="col-md-4">
+       <form enctype="multipart/form-data" method="POST" action="">
+           <div class="form-group">
+                   {% csrf_token %}
+                   
+               {{ form.as_p }}
+                       
+           <input type="submit" value="Upload"/>
+           </div>
+       </form>
+
+    </div>
+
+    <div class="col-md-1"></div>
 </div>
 
 {% endblock content %}

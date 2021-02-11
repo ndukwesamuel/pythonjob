@@ -67,7 +67,7 @@ class Tag(models.Model):
 
 class Company_detail(models.Model):
     Company_name = models.CharField(max_length=100, null=True)
-    Company_logo= models.ImageField(upload_to='images/', null=True,)
+    Company_logo= models.ImageField(upload_to='images/', null=True, blank=True)
     Company_Describe = models.TextField( null=True)
     website = models.CharField(max_length=200, null=True)
     Job_title = models.CharField(max_length=100, null=True)

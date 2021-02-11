@@ -11,30 +11,40 @@ class DeveloperForm(forms.ModelForm):
         model= developer
         fields= '__all__'
         exclude =  ['user']
+        widgets = {
+            'name':forms.TextInput(attrs={'class': 'form-control'}),
+            'Describe_yourself':forms.Textarea(attrs={'class': 'form-control'}),
+            'Location':forms.TextInput(attrs={'class': 'form-control'}),
+            'profile_pic':forms.FileInput(attrs={'class': 'form-control'}),
+            'Job_preferences':forms.Select(attrs={'class': 'form-control'}),            
+            'Level_of_seniority':forms.Select(attrs={'class': 'form-control'}),            
+            'Job':forms.TextInput(attrs={'class': 'form-control'}),
+            'Skill_Set':forms.TextInput(attrs={'class': 'form-control'}),
+            'laguage':forms.TextInput(attrs={'class': 'form-control'}),
+            'CV':forms.FileInput(attrs={'class': 'form-control'}),
+            'Privacy':forms.NullBooleanSelect(attrs={'class': 'form-control'}),  
+            
+            
+        }
 
 class CompanyForm(forms.ModelForm):
+
     class Meta:
         model= Company_detail
-        fields= ['Company_name']
-        exclude = ['Company_logo','website','Job_title','Job','Level_of_seniority','Job_description',]
-    #         Company_name = models.CharField(max_length=100, null=True)
-    # Company_logo= models.ImageField(upload_to='images/', null=True,)
-    # Company_Describe = models.TextField( null=True)
-    # website = models.CharField(max_length=200, null=True)
-    # Job_title = models.CharField(max_length=100, null=True)
-    # Job = models.CharField(max_length=100, null=True, choices=Job_type)
-    # Level_of_seniority = models.CharField(max_length=100, null=True, choices=Level)
-    # short_des = models.CharField(max_length=100, null=True)
-    # Job_description = models.TextField(null=True)
-    # How_to_apply = models.TextField(null=True)
-    # Application_target = models.CharField(max_length=200, null=True)
-    # Location = models.CharField(max_length=100, null=True)
-    # tags = models.ManyToManyField(Tag)  
+        fields=  '__all__'
         widgets = {
-            'Company_name': forms.TextInput(attrs={'class': 'Company_name'}),
+            'Company_name':forms.TextInput(attrs={'class': 'form-control'}),
+            'Company_logo':forms.FileInput(attrs={'class': 'form-control'}),
+            'Company_Describe':forms.Textarea(attrs={'class': 'form-control'}),
+            'website':forms.TextInput(attrs={'class': 'form-control'}),
+            'Job_title':forms.TextInput(attrs={'class': 'form-control'}),
+            'Job':forms.Select(attrs={'class': 'form-control'}),
+            'Level_of_seniority':forms.Select(attrs={'class': 'form-control'}),
+            'Job_description':forms.Textarea(attrs={'class': 'form-control'}),
+            'How_to_apply':forms.Textarea(attrs={'class': 'form-control'}),
+            'Application_target':forms.TextInput(attrs={'class': 'form-control'}),
+            'Location':forms.TextInput(attrs={'class': 'form-control'}),
+            'tags':forms.SelectMultiple(attrs={'class': 'form-control'}),
+            
         }
-# class company_profile(forms.ModelForm):
-#     class Meta:
-#         models =  developer
-#         fields= '__all__'
-#         # exclude =  ['user']
+
