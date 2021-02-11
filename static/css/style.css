@@ -19,6 +19,18 @@
     margin-right: 10em;
 }
 
+.index_se1_div_1_main{
+    text-align: center;
+}
+
+.index_se1_div_1_main div button{
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 2em;
+    font-size: 20px;
+}
+
+
 
 
 
@@ -85,5 +97,8 @@
 .Company_name{
     color: red;
 }
+
+
+
 
 

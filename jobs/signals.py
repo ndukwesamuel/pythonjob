@@ -17,7 +17,7 @@ def post_save_create_job(sender, instance, created, **kwargs):
         developer.objects.create(
             user=instance,
             name=instance.username,
-            email_address= instance.email
+            email= instance.email
             )
 
 

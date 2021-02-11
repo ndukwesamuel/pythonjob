@@ -44,9 +44,10 @@ Job_search_status = (
 class developer(models.Model):
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=100,null=True,)
+    email= models.CharField(max_length=100, null=True)
     Describe_yourself = models.TextField( null=True)
     Location = models.CharField(max_length=200, null=True)
-    profile_pic= models.FileField(upload_to='images/', null=True,)
+    profile_pic= models.FileField(upload_to='images/', null=True, blank=True, default="profile1.png", )
     Job_preferences = models.CharField(max_length=100, null=True, choices=Job_search_status)
     Level_of_seniority = models.CharField(max_length=100, null=True, choices=Level)
     Job = models.CharField(max_length=100, null=True, choices=Job_type)

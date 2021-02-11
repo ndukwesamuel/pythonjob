@@ -52,7 +52,7 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_UNIQUE =True
 
@@ -63,7 +63,8 @@ if DEBUG:
     EMAIL_BACKEND ='django.core.mail.backends.dummy.EmailBackend'
 
 else:
-    EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_BACKEND ='django.core.mail.backends.dummy.EmailBackend'
+    # EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 
 
 MIDDLEWARE = [
