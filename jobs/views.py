@@ -33,6 +33,7 @@ def developer_profile(request):
     form= DeveloperForm(request.POST or None, request.FILES or None, instance=dev)
     if form.is_valid():
         form.save()
+        form = DeveloperForm
 
     context = {'form':form, 'dev':dev}
     return render(request, 'developer_profile.html', context )
