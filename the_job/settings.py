@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'mhs(+om8rwbet(ur*!$*tli46hus9j+t=e1hqh$m8j#sr!nnx!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'bestsam.herokuapp.com']
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     'jobs',
+    'storages',
 
    
 ]
@@ -167,6 +168,22 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media/')
 MEDIA_URL= "/media/"
+
+
+
+
+#S3 BUCKETS CONFIG
+
+AWS_ACCESS_KEY_ID = 'AKIAUBQQM6OMSVOKETRJ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'pyjob'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+
+
 
 
 

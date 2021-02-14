@@ -18,7 +18,7 @@ class DeveloperForm(forms.ModelForm):
             'profile_pic':forms.FileInput(attrs={'class': 'form-control'}),
             'Job_preferences':forms.Select(attrs={'class': 'form-control'}),            
             'Level_of_seniority':forms.Select(attrs={'class': 'form-control'}),            
-            'Job':forms.TextInput(attrs={'class': 'form-control'}),
+            'Job':forms.Select(attrs={'class': 'form-control'}),
             'Skill_Set':forms.TextInput(attrs={'class': 'form-control'}),
             'laguage':forms.TextInput(attrs={'class': 'form-control'}),
             'CV':forms.FileInput(attrs={'class': 'form-control'}),
