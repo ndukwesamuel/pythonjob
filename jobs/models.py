@@ -47,7 +47,7 @@ class developer(models.Model):
     email= models.CharField(max_length=100, null=True)
     Describe_yourself = models.TextField( null=True)
     Location = models.CharField(max_length=200, null=True)
-    profile_pic= models.FileField(upload_to='images/', null=True, blank=True, default="profile1.png", )
+    profile_pic= models.FileField(upload_to='images/', null=True,default="images/profile1.png")
     Job_preferences = models.CharField(max_length=100, null=True, choices=Job_search_status)
     Level_of_seniority = models.CharField(max_length=100, null=True, choices=Level)
     Job = models.CharField(max_length=100, null=True, choices=Job_type)
@@ -68,7 +68,7 @@ class Tag(models.Model):
 
 class Company_detail(models.Model):
     Company_name = models.CharField(max_length=100, null=True)
-    Company_logo= models.ImageField(upload_to='images/', null=True, blank=True)
+    Company_logo= models.ImageField(upload_to='images/', null=True,default="images/profile1.png")
     Company_Describe = models.TextField( null=True)
     website = models.CharField(max_length=200, null=True)
     Job_title = models.CharField(max_length=100, null=True)

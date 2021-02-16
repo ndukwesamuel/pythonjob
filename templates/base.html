@@ -31,15 +31,16 @@
              
                    </ul>
                 <div class="d-flex">
-                    <h3 style="margin-right: 1em;">{{request.user}}</h3>
+                    
                     {% if user.is_authenticated %}
+                    <h3 style="margin-right: 1em;">{{request.user}}</h3>
                     <a class="nav-link btn btn-success" href="{% url  'account_logout' %}">  LOGOUT</a>
-
+                    
 
 
                     {% else %}
-                    <a class="nav-link" href="{% url  'account_login' %}"> login </a>
-                    <a class="nav-link" href="{% url  'account_signup' %}"> Signup </a>
+                    <a class="nav-link btn btn-primary" style="margin-right: 1em;" href="{% url  'account_login' %}"> login </a>
+                    <a class="nav-link btn btn-warning " href="{% url  'account_signup' %}"> Signup </a>
 
                     {% endif %}
 
