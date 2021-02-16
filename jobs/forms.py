@@ -41,6 +41,7 @@ class CompanyForm(forms.ModelForm):
             'Job':forms.Select(attrs={'class': 'form-control'}),
             'Level_of_seniority':forms.Select(attrs={'class': 'form-control'}),
             'Job_description':forms.Textarea(attrs={'class': 'form-control'}),
+            'short_Job_description':forms.TextInput(attrs={'class': 'form-control'}),
             'How_to_apply':forms.Textarea(attrs={'class': 'form-control'}),
             'Application_target':forms.TextInput(attrs={'class': 'form-control'}),
             'Location':forms.TextInput(attrs={'class': 'form-control'}),

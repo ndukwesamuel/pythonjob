@@ -7,35 +7,34 @@
 
 
 <section class="index">
-
     {%  include 'sec.html' %}
    
-
-
   <section class="index_sec2">
         <div class="container">
             <div class="row">
                 <div class="col-md-1">Lorem ipsum dolor sit amet consectetur  </div>
                 <div class="col-md-8">
                     {%for job in jobs  %}
-                        <div class="index_sec2_job">
-                            <div class="row">
-                                <div class="col-sm-2 job_img">                            
-                                    <img src="{{job.Company_logo.url}}" alt="company logo" width="100">
+                    <div class="a">
+                        <p class="btn btn-primary sam ">sam</p>
+                        <p class="btn btn-warning sam1 ">{{job.Job}}</p>
+                        <div class="row">
+
+                            <div class="col-sm-2 "><img class="img_q" src="{{job.Company_logo.url}}"></div>
+            
+                            <div class="col-sm-10">
+                
+                                <div class="b">
+                                    {{job}}
+                                    <h3>{{job.Job_title}}</h3>
+                                    <p >At {{job.Company_name}} -- {{job.Location}}-- {{job.Job}}</p>
+                                    <div><p>{{job.short_Job_description}}</p></div>
                                 </div>
-                                <div class="col-sm-9">
-                                    <div>{{job.Job_title}}</div>
-                                    
-                                    <div>At {{job.Company_name}} -- {{job.Location}}-- {{job.Job}}</div>
-                                    <div>{{job.short_des}}</div>
                                 
-                                </div>
-
                             </div>
-                           
-
+                        
                         </div>
-                    
+                    </div>
 
                     {% endfor %}
                 </div>

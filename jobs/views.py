@@ -27,13 +27,15 @@ def Hire_developers(request):
     context = {'form':form}
     return render(request, 'Hire_developers.html', context)
 
-@login_required(login_url='clicked')
+@login_required(login_url='account_login')
 def developer_profile(request):
     dev = developer.objects.get(user=request.user)
     form= DeveloperForm(request.POST or None, request.FILES or None, instance=dev)
     if form.is_valid():
         form.save()
         form = DeveloperForm
+
+
 
     context = {'form':form, 'dev':dev}
     return render(request, 'developer_profile.html', context )

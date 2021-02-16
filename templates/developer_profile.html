@@ -4,50 +4,62 @@
 {% block content %}
 {% load static %}
 
-<div>
-    <h1>Developer postfolio</h1></div>
-    {{request.user}}
-<!-- <div>
-<form enctype="multipart/form-data" method="POST" action="">
-{% csrf_token %}
-<div class="">{{ form.as_p }}
-<input type="submit" value="Upload"/>
-</div>
 
-</form>
-</div> -->
-
-
-<div class="row">
-    <div class="col-md-7">
-        <div>{{dev.name}}</div>
-       <div> {{dev.email}}</div>
-        <div>{{dev.Describe_yourself}}</div>
-        <div>{{dev.Location}}</div>
-        <div>{{dev.profile_pic}}</div>
-        <div>{{dev.Job_preferences}}</div>
-        <div>{{dev.Level_of_seniority}}</div>
-        <div>{{dev.Job}}</div>
-        <div>{{dev.Skill_Set}}</div>
-        <div>{{dev.laguage}}</div>
+<div class="container">
+    <div>
+        <h1>Developer postfolio</h1>
+    </div>
+    
+    <section>
+        <div> 
+           
         
+        </div>
+    </section>
+    
 
-        <img src="{{dev.profile_pic.url}}" alt="" width="100">
+
+
+    <div class="row">
+        <div class="col-md-7">
+            <div class="dev">
+ 
+            <div class="container">
+                               
+                <img class="dev_pic" src="{{dev.profile_pic.url}}" alt="" width="100">
+
+                <h3> Username: <span>{{request.user}} </span></h2>
+
+                <h3> Username: <span> </span></h2>
+
+                <h3> Email: <span>{{dev.email}}</span></h2>
+
+                <h3> Location: <span>{{dev.Location}}</span></h2>
+
+                <h3> Location: <span>{{dev.laguage}}</span></h2>
+                    
+                <h3> Skill  set: <span>{{dev.Skill_Set}}</span></h2> 
+            </div>
+
+
+
+            </div>
+  
+        </div>
+        <div class="col-md-4">
+        <form enctype="multipart/form-data" method="POST" action="">
+            <div class="form-group">
+                    {% csrf_token %}
+                    
+                {{ form.as_p }}
+                        
+            <input type="submit" value="Upload"/>
+            </div>
+        </form>
+
+        </div>
+
+        <div class="col-md-1"></div>
     </div>
-    <div class="col-md-4">
-       <form enctype="multipart/form-data" method="POST" action="">
-           <div class="form-group">
-                   {% csrf_token %}
-                   
-               {{ form.as_p }}
-                       
-           <input type="submit" value="Upload"/>
-           </div>
-       </form>
-
-    </div>
-
-    <div class="col-md-1"></div>
 </div>
-
 {% endblock content %}

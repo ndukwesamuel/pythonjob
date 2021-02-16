@@ -75,6 +75,7 @@ class Company_detail(models.Model):
     Job = models.CharField(max_length=100, null=True, choices=Job_type)
     Level_of_seniority = models.CharField(max_length=100, null=True, choices=Level)
     Job_description = models.TextField(null=True)
+    short_Job_description = models.CharField(max_length=100, null=True)
     How_to_apply = models.TextField(null=True)
     Application_target = models.CharField(max_length=200, null=True)
     Location = models.CharField(max_length=100, null=True)
