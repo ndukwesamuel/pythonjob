@@ -14,22 +14,13 @@
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-8">
-                    {%for job in jobs  %}
+                    {%for job in jobs reversed  %}
                     <div class="a">
-                        <p class="btn btn-primary sam ">sam</p>
+                        <p class="btn btn-primary sam ">samdhdfjh</p>
                         <p class="btn btn-warning sam1 ">{{job.Job}}</p>
                         <div class="row">
 
                             <!-- job.Company_logo  user.is_authenticated-->
-
-                            {% if job.Company_logo %}
-                            <h3 style="margin-right: 1em;">{{request.user}}</h3>
-                        
-                            {% else %}
-                            <a class="nav-link btn btn-primary" style="margin-right: 1em;" href="{% url  'account_login' %}"> login </a>
-                        
-                            {% endif %}
-    
                             
                             <div class="col-sm-2 "><img class="img_q" src="{{job.Company_logo.url}}"></div>
             
@@ -37,7 +28,7 @@
                 
                                 <div class="b">
                                     {{job}}
-                                    <h3>{{job.Job_title}}</h3>
+                                   <a href="{% url 'job_detail' job.id %}"> <h3>{{job.Job_title}}</h3></a>
                                     <p >At {{job.Company_name}} -- {{job.Location}}-- {{job.Job}}</p>
                                     <div><p>{{job.short_Job_description}}</p></div>
                                 </div>

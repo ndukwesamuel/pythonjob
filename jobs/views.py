@@ -18,7 +18,8 @@ def home(request):
     context =  {'jobs':jobs}
     return render(request, 'index.html',context )
 
-@login_required(login_url='clicked')
+
+# @login_required(login_url='clicked')
 def Hire_developers(request):
     form= CompanyForm(request.POST or None, request.FILES or None)
     if form.is_valid():

@@ -4,7 +4,7 @@
 
 .index_se1{
     /* background: purple; */
-    background-image: url(/static/images/1.jpg);
+    background-image: url(/images/1.jpg);
     color: white;
 }
 
@@ -150,6 +150,50 @@
 .b p{
 
     margin-top: -1em;
+}
+
+
+
+/* post job css start here */
+
+
+
+
+.post1{
+	margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+
+.post2{
+	background: grey;
+	margin-bottom: 3em;
+    color: white;
+
+}
+
+.post2 div div {
+padding-top: 2px;
+padding-bottom: 2px;
+
+}
+
+.post2 div div p {
+	margin-bottom: -4px;
+	padding-top: 2px;
+	padding-bottom:  2px;
+
+}
+
+
+
+.post5{
+	border-radius: 10px;
+	background: blue;
+	color: white;
+    margin-bottom: 3em;
+    padding-bottom: 2em;
+    padding-top: 2em;
 }
 
 

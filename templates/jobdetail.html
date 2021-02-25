@@ -4,75 +4,159 @@
 {% load static %}
 
 
-<section class="job_details_sec1">
-    <div class="container">
+<section class="container">
+
+<!-- first div of job post start here-->
+    <div class="post1">
         <div class="row">
-            <div class="col-sm-2"><img src="{{job.Company_logo.url}}" alt="what happen"  width="100">
+            <div class="col-sm-2">
+              <img src="{{job.Company_logo.url}}" width="100">
             </div>
-
-            <div class="col-sm-10">
-               <h1> {{job.Job_title}} </h1> 
-                   <div>{{job.company_detail.Company_name}}
-                       <span>
-                        <a href="{{job.company_detail.website}}">{{job.company_detail.website}}</a>
-
-                       </span>
-                   </div>
+  
+            <div class="col-sm-8">
+              <h2>{{job.Job_title}} </h2>
+              <p> at {{job.Company_name}} --- <a href="{{job.website}} ">Visit company website</a>  </p>
             </div>
+  
         </div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi magnam quisquam quia voluptate minima nesciunt. Vitae rerum placeat ullam debitis ea dignissimos cum nihil odio corrupti corporis. Commodi, corporis dolorum?
-    </div>
-    
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi magnam quisquam quia voluptate minima nesciunt. Vitae rerum placeat ullam debitis ea dignissimos cum nihil odio corrupti corporis. Commodi, corporis dolorum?
+        
+      </div>
+
+<!-- first div of job post end here-->
+
+
+
+
+<!-- second div of job post start here-->
+
+      
+    <div class="post2">
+        <div class="container">
+  
+          <div class="row">
+            <div class="col-sm-3">
+              <p>Location</p>
+              <p>{{job.Location}}</p>
+            </div>
+  
+            <div class="col-sm-3">
+              <p>  Job type</p>
+              <p>{{job.Job}}</p>
+            </div>
+  
+            <div class="col-sm-3">
+              <p>Salary</p>
+              <p>---</p>
+            </div>
+  
+            <div class="col-sm-3">
+              <p>Posted</p>
+              <p>---</p>
+            </div>
+  
+          </div>
+        </div>
+  
    
-</section>
+      </div>
+  
 
-<section class="job_details_sec2">
-    job_details_sec2job_details_sec2job_details_sec2job_details_sec2job_details_sec2
-    Job typeTemporaryPosted 16 hours ago
 
-    job_details_sec2job_details_sec2job_details_sec2job_details_sec2job_details_sec2
-    Job typeTemporaryPosted 16 hours ago
-</section>
+<!-- second div of job post end here-->
 
-<section class="job_details_sec3">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-9">
-              
-    <div>{{job.company_detail.Company_Describe}}</div>
-    <div>{{job.company_detail.website}}</div>
-    <div>  </div>
-    <div>{{job.Job}}    </div>
-    <div>{{job.Level_of_seniority}}    </div>
-    <div>{{job.Job_description}}    </div>
-    <div>{{job.How_to_apply}}    </div>
-    <div>{{job.Application_target}}    </div>
-    <div>{{job.Location}}    </div>
 
-            </div>
+<!-- third div of job post start here-->
+<div class="post_body ">
+    <div class="row">
+      <div class="col-sm-9">
 
-            <div class="col-md-2">
-                job_details_sec2job_details_sec2job_details_sec2job_details_sec2job_details_sec2
-                Job typeTemporaryPosted 16 hours ago
-            
-                job_details_sec2job_details_sec2job_details_sec2job_details_sec2job_details_sec2
-                Job typeTemporaryPosted 16 hours ago
-
-            </div>
-            <div class="col-lg-1"></div>
+        <div class="post_body1">
+          <h2>Company description</h2>
+              <p>
+                  {{job.Company_Describe}}
+              </p>
+          
         </div>
-    </div>
 
 
+        <div class="post_body2">
+          <h2>Job description</h2>
+              <p>
+                {{job.Job_description}}
+              </p>
+          
+        </div>
+
+
+        <div class="post_body3">
+          <h2>Skills</h2>
+          <hr>
+              <p>
+                 {{job.Level_of_seniority}}
+              </p>
+          
+        </div>
+
+
+
+        <div class="post5">
+            <div class="container">
+                      
+              <h2>How to apply</h2>
+             
+                  <p>
+                      {{job.How_to_apply}}
+                  </p>
+                  
+                  <a class="btn btn-primary" href="{{job.Application_target}}">Apply</a>
+                </div>
+          
+        </div>
 
         
+      </div>
 
 
+<!-- third div of job post end here-->
+
+
+
+
+<!-- the side view of the div -->
+
+<div class="col-sm-3">
+
+    <div>
+
+
+      <a class="btn btn-warning" href="{{job.Application_target}}">Apply  </a>
+      <hr>
+      
+      <h3>Are you interested in this position?</h3>
+      <p>Make sure you have read the How to Apply section.</p>
     </div>
+    
+
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </div>
+
+
+<!-- the end of the side  -->
+
+</div>
+
+    
+</div>
+
+
+
 
 </section>
-
 
 
 {% endblock content %}
