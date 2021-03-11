@@ -32,6 +32,7 @@ class CompanyForm(forms.ModelForm):
     class Meta:
         model= Company_detail
         fields=  '__all__'
+        # exclude =  ['user']
         widgets = {
             'Company_name':forms.TextInput(attrs={'class': 'form-control'}),
             'Company_logo':forms.FileInput(attrs={'class': 'form-control'}),

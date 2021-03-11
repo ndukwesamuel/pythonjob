@@ -4,7 +4,7 @@ from django.contrib.auth.models import Group
 from django.dispatch import receiver
 
 
-from .models import developer
+from .models import developer, Company_detail
 
 
 @receiver(post_save, sender=User)
@@ -17,23 +17,15 @@ def post_save_create_job(sender, instance, created, **kwargs):
         developer.objects.create(
             user=instance,
             name=instance.username,
-            email= instance.email
+            email= instance.email,
             )
 
-
-# post_save.connect(post_save_create_job, sender=User)
-# @receiver(post_save, sender=User)
-# def post_save_create_job(sender, instance, created, **kwargs):
-#     print('sender', sender)
-#     print('instance',instance)
-#     if created:
-#         # group = Group.objects.get(name='customer')
-#         # instance.groups.add(group)
-#         Company_detail.objects.create(
-#             user=instance,
-#             Company_name=instance.username,
-#             email_address= instance.email
-#             )
+        Company_detail.objects.create(
+            user=instance,
+            Company_name=instance.username,
+            Company_Describe= instance.email,
+            )
+        print('it woring')
 
 
-# post_save.connect(post_save_create_job, sender=User)
+

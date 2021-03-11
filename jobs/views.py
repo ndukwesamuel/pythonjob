@@ -21,7 +21,9 @@ def home(request):
 
 # @login_required(login_url='clicked')
 def Hire_developers(request):
-    form= CompanyForm(request.POST or None, request.FILES or None)
+
+    dev = Company_detail.objects.get(user=request.user)
+    form= CompanyForm(request.POST or None, request.FILES or None, instance=dev)
     if form.is_valid():
         form.save()
 

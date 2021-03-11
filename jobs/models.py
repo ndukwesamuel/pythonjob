@@ -30,7 +30,7 @@ Job_search_status = (
 
 class developer(models.Model):
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100,null=True,)
+    name = models.CharField(max_length=100,null=True, )
     email= models.CharField(max_length=100, null=True)
     Describe_yourself = models.TextField( null=True)
     Location = models.CharField(max_length=200, null=True)
@@ -54,19 +54,20 @@ class Tag(models.Model):
         return self.name
 
 class Company_detail(models.Model):
-    Company_name = models.CharField(max_length=100, null=True)
-    Company_logo= models.ImageField(upload_to='images/', null=True,default="images/profile1.png")
-    Company_Describe = models.TextField( null=True)
-    website = models.CharField(max_length=200, null=True)
-    Job_title = models.CharField(max_length=100, null=True)
-    Job = models.CharField(max_length=100, null=True, choices=Job_type)
-    Level_of_seniority = models.CharField(max_length=100, null=True, choices=Level)
-    Job_description = models.TextField(null=True)
-    short_Job_description = models.CharField(max_length=100, null=True)
-    How_to_apply = models.TextField(null=True)
-    Application_target = models.CharField(max_length=200, null=True)
-    Location = models.CharField(max_length=100, null=True)
-    tags = models.ManyToManyField(Tag)
+    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE, related_name = 'text_content')
+    Company_name = models.CharField(max_length=100, null=True, blank=True)
+    Company_logo= models.ImageField(upload_to='images/', null=True,default="images/profile1.png", blank=True)
+    Company_Describe = models.TextField( null=True, blank=True)
+    website = models.CharField(max_length=200, null=True, blank=True)
+    Job_title = models.CharField(max_length=100, null=True, blank=True  )
+    Job = models.CharField(max_length=100, null=True, choices=Job_type, blank=True)
+    Level_of_seniority = models.CharField(max_length=100, null=True, choices=Level, blank=True)
+    Job_description = models.TextField(null=True, blank=True)
+    short_Job_description = models.CharField(max_length=100, null=True,blank=True)
+    How_to_apply = models.TextField(null=True, blank=True)
+    Application_target = models.CharField(max_length=200,blank=True, null=True)
+    Location = models.CharField(max_length=100, null=True,blank=True )
+    tags = models.ManyToManyField(Tag, blank=True,)
 
 
 
