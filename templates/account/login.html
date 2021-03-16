@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 
 {% load i18n %}
@@ -7,12 +8,25 @@
 
 {% block content %}
 
+<style>
+.login_div{
+
+  margin-top: 8em;
+  text-align: center;
+
+  
+}
+
+</style>
+
 <div class="container">
 
   <div class="row">
     <div class="col-lg-2"></div>
-    <div class="col-lg-8">
    
+   
+    <div class="col-lg-8">
+      <div class="login_div">
 
           <h1>{% trans "Sign In" %}</h1>
 
@@ -50,8 +64,9 @@
             <button class="primaryAction btn btn-primary" type="submit">{% trans "Sign In" %}</button>
           </form>
 
-
+        </div>
     </div>
+
     <div class="col-lg-2"></div>
 
   </div>

@@ -30,11 +30,6 @@
     font-size: 20px;
 }
 
-
-
-
-
-
 .index_sec2_job{
     border:  solid 3px;
     background-color: white;
@@ -194,6 +189,12 @@ padding-bottom: 2px;
     margin-bottom: 3em;
     padding-bottom: 2em;
     padding-top: 2em;
+}
+
+.login_div{
+
+    margin-top: 10em;
+    border: orangered 2px solid;
 }
 
 
