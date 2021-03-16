@@ -14,12 +14,16 @@ from django.contrib.auth.models import Group
  
 def home(request):
     jobs = Company_detail.objects.all()
+    form = newsletterform(request.POST or None)
+    if form.is_valid():
+        form.save()
 
-    context =  {'jobs':jobs}
+    context =  {'jobs':jobs, 'form':form}
     return render(request, 'index.html',context )
 
 
 # @login_required(login_url='clicked')
+@login_required(login_url='account_login')
 def Hire_developers(request):
 
     dev = Company_detail.objects.get(user=request.user)
@@ -28,7 +32,7 @@ def Hire_developers(request):
         form.save()
 
     context = {'form':form}
-    return render(request, 'Hire_developers.html', context)
+    return render(request, 'Hire_developers_page.html', context)
 
 @login_required(login_url='account_login')
 def developer_profile(request):
@@ -38,10 +42,8 @@ def developer_profile(request):
         form.save()
         form = DeveloperForm
 
-
-
     context = {'form':form, 'dev':dev}
-    return render(request, 'developer_profile.html', context )
+    return render(request, 'developer_profile_page.html', context )
 
 def FULL_TIME(request):
     jobs = Company_detail.objects.filter(tags__name="FULLTIME")
@@ -50,7 +52,7 @@ def FULL_TIME(request):
     status = 'FULLTIME'
 
     context =  {'jobs':jobs, 'status':status,}
-    return render(request, 'status.html',context )
+    return render(request, 'job_status_page.html',context )
 
 
 def PART_TIME(request):
@@ -60,7 +62,7 @@ def PART_TIME(request):
     status = 'PART TIME'
 
     context =  {'jobs':jobs, 'status':status,}
-    return render(request, 'status.html',context )
+    return render(request, 'job_status_page.html',context )
 
 def FREELANCE(request):
     jobs = Company_detail.objects.filter(tags__name="FREELANCE")
@@ -69,7 +71,7 @@ def FREELANCE(request):
     status = 'FREELANCE '
 
     context =  {'jobs':jobs, 'status':status,}
-    return render(request, 'status.html',context )
+    return render(request, 'job_status_page.html',context )
 
 def REMOTE(request):
     jobs = Company_detail.objects.filter(tags__name="REMOTE")
@@ -78,16 +80,19 @@ def REMOTE(request):
     status = 'REMOTE '
 
     context =  {'jobs':jobs, 'status':status,}
-    return render(request, 'status.html',context )
+    return render(request, 'job_status_page.html',context )
 
 
-def clicked(request):
-    return render(request, 'click.html')
+
 
 def job_detail(request, pk_test):
     job = Company_detail.objects.get(id=pk_test)
     print('working ')
     print(job.Company_name)
 
-    context =  {'job':job,}
-    return render(request, 'jobdetail.html', context)
+    url_s = job.Application_target 
+    print(url_s)
+
+
+    context =  {'job':job,'url_s':url_s}
+    return render(request, 'jobdetail_page.html', context)

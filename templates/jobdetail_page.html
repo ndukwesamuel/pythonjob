@@ -4,6 +4,7 @@
 {% load static %}
 
 
+
 <section class="container">
 
 <!-- first div of job post start here-->
@@ -108,7 +109,9 @@
                       {{job.How_to_apply}}
                   </p>
                   
-                  <a class="btn btn-primary" href="{{job.Application_target}}">Apply</a>
+                  <a class="btn btn-primary" href="{{job.Application_target}}">{{url_s}}</a>
+
+
                 </div>
           
         </div>
@@ -130,6 +133,7 @@
 
 
       <a class="btn btn-warning" href="{{job.Application_target}}">Apply  </a>
+ 
       <hr>
       
       <h3>Are you interested in this position?</h3>

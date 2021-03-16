@@ -12,7 +12,7 @@ urlpatterns = [
 	path('REMOTE/', views.REMOTE, name="REMOTE"),
   	path('Hire_developers/', views.Hire_developers, name="Hire_developers"),
 	path('developer_profile/', views.developer_profile, name='developer_profile'),
-	path('clicked/', views.clicked, name='clicked'),
+
 	path('job_detail/<str:pk_test>/', views.job_detail, name="job_detail"),
 	
 
