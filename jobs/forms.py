@@ -32,7 +32,7 @@ class CompanyForm(forms.ModelForm):
     class Meta:
         model= Company_detail
         fields=  '__all__'
-        # exclude =  ['user']
+        exclude =  ['user']
         widgets = {
             'Company_name':forms.TextInput(attrs={'class': 'form-control'}),
             'Company_logo':forms.FileInput(attrs={'class': 'form-control'}),
@@ -57,21 +57,4 @@ class newsletterform(forms.ModelForm):
     class Meta:
         model= newsletter
         fields=  '__all__'
-        # exclude =  ['user']
-        # widgets = {
-        #     'Company_name':forms.TextInput(attrs={'class': 'form-control'}),
-        #     'Company_logo':forms.FileInput(attrs={'class': 'form-control'}),
-        #     'Company_Describe':forms.Textarea(attrs={'class': 'form-control'}),
-        #     'website':forms.TextInput(attrs={'class': 'form-control'}),
-        #     'Job_title':forms.TextInput(attrs={'class': 'form-control'}),
-        #     'Job':forms.Select(attrs={'class': 'form-control'}),
-        #     'Level_of_seniority':forms.Select(attrs={'class': 'form-control'}),
-        #     'Job_description':forms.Textarea(attrs={'class': 'form-control'}),
-        #     'short_Job_description':forms.TextInput(attrs={'class': 'form-control'}),
-        #     'How_to_apply':forms.Textarea(attrs={'class': 'form-control'}),
-        #     'Application_target':forms.TextInput(attrs={'class': 'form-control'}),
-        #     'Location':forms.TextInput(attrs={'class': 'form-control'}),
-        #     'tags':forms.SelectMultiple(attrs={'class': 'form-control'}),
-            
-        # }
 

@@ -6,6 +6,9 @@ urlpatterns = [
 
 	#Leave as empty string for base url
 	path('', views.home, name="home"),
+	path('index1/', views.index1, name="index1"),
+	
+	
 	path('FULL_TIME/', views.FULL_TIME, name="fultime"),
 	path('PART_TIME/', views.PART_TIME, name="PARTTIME"),
 	path('FREELANCE/', views.FREELANCE, name="FREELANCE"),

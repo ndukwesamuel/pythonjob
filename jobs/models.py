@@ -38,7 +38,7 @@ class developer(models.Model):
     Job_preferences = models.CharField(max_length=100, null=True, choices=Job_search_status)
     Level_of_seniority = models.CharField(max_length=100, null=True, choices=Level)
     Job = models.CharField(max_length=100, null=True, choices=Job_type)
-    Skill_Set = models.CharField(max_length=200, null=True)
+    # Skill_Set = models.CharField(max_length=200, null=True)
     laguage =  models.CharField(max_length=200, null=True)
     CV= models.FileField(upload_to='files/', null=True,)
     Privacy = models.BooleanField(default=True,null=True, blank=True)

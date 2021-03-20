@@ -1,12 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
 .index{
     background-color: white;
 }
 
 .index_se1{
     /* background: purple; */
-    background-image: url(/images/1.jpg);
+
+    background-image: url(../images/1.jpg);
+
     color: white;
 }
+
+
 
 .index_se1_div_1{
     padding-top: 8em;
@@ -15,8 +24,9 @@
 }
 
 .index_se1_div_1_btn{
-    margin-left: 10em;
-    margin-right: 10em;
+text-align: center;
+margin-top: -6em;
+margin-bottom: 10em;
 }
 
 .index_se1_div_1_main{
@@ -58,6 +68,8 @@
     color: white;
     padding-top: 5em;
     padding-bottom: 5em;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .index_sec3_row2 p{
@@ -70,6 +82,15 @@
 .index_sec3_form{
     text-align: center;
     /* background-color: orange; */
+}
+
+
+.index_sec4{
+    background:   white;
+    color: black;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    margin-bottom: 2em;
 }
 
 .HIRE_sec_div_form {
@@ -102,7 +123,8 @@
 }
 
 .dev{
-    border: solid red;
+    border: solid ;
+    border-radius: 3em;
 }
 
 
@@ -194,9 +216,122 @@ padding-bottom: 2px;
 .login_div{
 
     margin-top: 10em;
-    border: orangered 2px solid;
+    border:  2px solid;
+    text-align:  center;
+    border-radius: 2em;
 }
 
+
+
+/* sec area */
+
+.sec_btn_small a{
+    margin-left: 2em;
+    border: 2px;
+}
+
+.index_se1_btn1{
+    margin-right: -30em;
+}
+
+.index_se1_btn2{
+    margin-left: -30em;
+}
+
+.status_link{
+    text-align: center;
+}
+/* 
+media queary */
+
+
+@media screen and (max-width: 800px) {
+    .index {
+      background-color: purple;
+    }
+
+
+    /* this area is for sec */
+
+    .index_se1_div_1{   
+
+        padding-left: 8em;
+    }
+
+    .index_se1_btn1{
+        margin-right:-10em;
+    }
+    
+    .index_se1_btn2{
+        margin-left: -10em;
+    }
+
+
+    /* this area is for sec */
+
+  }
+
+/* phone tablet version */
+
+
+
+
+@media screen and (max-width: 600px) {
+    .index {
+      background-color: red;
+    }
+
+    /* this area is for sec */
+
+    .index_se1_div_1{   
+      
+        text-align: center;
+    }
+
+    .index_se1_div_1_main{
+        margin-left: -4em;
+        
+    }
+
+   .index_se1_div_1_main h1{
+        margin-top: -4em;
+        margin-bottom: 2em;
+        
+    }
+
+    .index_se1_div_1_btn{
+
+        margin-bottom: 2em;
+    }
+
+    .index_se1_btn1{
+        margin-right:-0em;
+    }
+    
+    .index_se1_btn2{
+        margin-left: 0em;
+    }
+
+
+    .btn_space1{
+        margin-bottom: 1em;
+    }
+    
+
+    .status_link a{
+
+      font-size: 12px;
+      margin-left: -5;
+
+    }
+    
+
+    /* this area is for sec */
+
+
+  }
+
+  
 
 
 

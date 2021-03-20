@@ -22,6 +22,16 @@ def home(request):
     return render(request, 'index.html',context )
 
 
+def index1(request):
+    jobs = Company_detail.objects.all()
+    form = newsletterform(request.POST or None)
+    if form.is_valid():
+        form.save()
+
+    context =  {'jobs':jobs, 'form':form}
+    return render(request, 'index2.html',context )
+
+
 # @login_required(login_url='clicked')
 @login_required(login_url='account_login')
 def Hire_developers(request):
