@@ -293,7 +293,7 @@ media queary */
 /*this area is fpr sec 2 */
 .index_sec2_a{
 
-		background: black;
+		/* background: black; */
         padding-right: 2em;
         width:  35em;
 	
@@ -318,9 +318,6 @@ media queary */
   /* phone tablet version */
 
 @media screen and (max-width: 600px) {
-    .index {
-      background-color: red;
-    }
 
     /* this area is for sec */
 
@@ -374,8 +371,8 @@ media queary */
 
     /*this area is fpr sec 2 */
 .index_sec2_a{
-
-    background: black;
+/* 
+    background: black; */
     width: 18em;
     padding-left: 20px;
     /* padding-right: 1em;
