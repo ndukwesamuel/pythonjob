@@ -6,28 +6,29 @@
 <div class="index">
     
 {%  include 'sec.html' %}
+
 <section class="index_sec2">
     <div class="container">
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-8">
                 {%for job in jobs reversed  %}
-                <div class="a">
+                <div class="index_sec2_a">
                     <p class="btn btn-primary index_btn1 "> take </p>
-                    <p class="btn btn-warning index_btn1 ">{{job.Job}}</p>
-                    <div class="row">
+                    <p class="btn btn-warning index_btn2 ">{{job.Job}}</p>
 
+                    <div class="row">
                         <!-- job.Company_logo  user.is_authenticated-->
-                        
+                    
                         <div class="col-sm-2 "><img class="img_q" src="{{job.Company_logo.url}}"></div>
         
                         <div class="col-sm-10">
+                            <div class="index_sec2_b">
+                                <a  href="{% url 'job_detail' job.id %}"> <h3>{{job.Job_title}}</h3></a>
+                                <p class="index_job" >At {{job.Company_name}} --{{job.Job}}</p>
+                                <p>{{job.short_Job_description}}</p>
+                             
             
-                            <div class="b">
-                                <p>{{job}}</p>
-                               <a href="{% url 'job_detail' job.id %}"> <h3>{{job.Job_title}}</h3></a>
-                                <p class="index_job" >At {{job.Company_name}} -- {{job.Location}}-- {{job.Job}}</p>
-                                <div><p>{{job.short_Job_description}}</p></div>
                             </div>
                             
                         </div>
@@ -45,7 +46,65 @@
 </section>  
 
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa aliquid sunt ea nam corporis nemo laudantium voluptates eligendi necessitatibus ipsum at placeat adipisci sequi facere, repudiandae quas exercitationem ut eos.
+<section class="index_sec3">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-sm-8"> 
+            <div class="row">
+                <h1 style="text-align: center;">Find Python jobs by location</h1>
+                <div class="col-lg-2"></div>
+                <div class="col-md-4 index_sec3_row2">
+                    <p>Popular cities</p>
+                    <p>Python jobs in New York</p>
+                   <p> Python jobs in London</p>
+                   <p> Python jobs in Paris</p>
+                </div>
+                <div class="col-md-4 index_sec3_row2 ">
+                    <p>Filter by job type</p>
+                    <p>Full-time Python jobs</p>
+                    <p>Part-time Python jobs</p>
+                    <p>Freelance Python jobs</p>
+                   <p> Internship Python jobs</p>
+                    <p>Remote Python jobs</p>
+                </div>
+                <div class="col-lg-2"></div>
+
+            </div>
+                           
+        </div>
+        <div class="col-md-2"></div>
+
+    </div>
+
+</section>
+
+<section class="index_sec4">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-sm-8 index_sec3_form"> 
+          <h1>  Subscribe to our newsletter</h1>
+          <p>Get the best of our listings into your inbox. Issued weekly.</p>
+            
+          <form action="" method="POST" class="form_input_index">
+            {% csrf_token %}
+
+              <input type="text" name="name" id="" placeholder="Name">
+              
+              <br>
+
+              <input class="" type="email" name="email" id="" placeholder="Email">
+              <br>
+
+              <input type="submit" value="YES PLEASE">
+                <p> ✋️ We promise to respect your inbox. Subscribe!</p>
+            
+          </form>          
+        </div>
+        <div class="col-lg-2"></div>
+
+    </div>
+
+</section>
 
 
 {%  include 'footer.html' %}

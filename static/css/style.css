@@ -15,8 +15,6 @@
     color: white;
 }
 
-
-
 .index_se1_div_1{
     padding-top: 8em;
     padding-bottom: 8em;
@@ -40,13 +38,43 @@ margin-bottom: 10em;
     font-size: 20px;
 }
 
-.index_sec2_job{
-    border:  solid 3px;
-    background-color: white;
-    border-radius: 5px;
-    margin-top: 10px;
+/* index_Sec2 start here */
 
+.index_btn1{
+    margin-top: -1em;
+    margin-left: 1em;
+    
 }
+
+/* .index_btn2{
+    margin-left: 40em;
+    margin-top: -3em;
+} */
+
+.index_sec2_a{
+
+	border-radius: 10px;
+	background: grey;
+	margin-top: 2em;
+}
+
+.index_sec2_b{
+    color: white;
+}
+
+
+.index_sec2_b a{
+    text-decoration: none;
+    color: white;
+}
+
+.index_job{
+    font-size: 16px;
+    margin-top: -10px;
+}
+
+/* index_Sec2 end here */
+
 
 .job_details_sec2{
     border: solid  0px;
@@ -125,22 +153,15 @@ margin-bottom: 10em;
 .dev{
     border: solid ;
     border-radius: 3em;
+    overflow-wrap: break-word;
+    
 }
 
 
 
-.a{
-	border: black 3px solid ;	
-	border-radius: 10px;
-	background: greyi;
-	margin-top: 2em;
-}
 
-.b{
-	margin-left:  -50px;
-	margin-right:  10px;
-	text-align: justify-all;
-}
+
+
 
 .img_q{
 	width: 50px;
@@ -269,12 +290,32 @@ media queary */
 
     /* this area is for sec */
 
+/*this area is fpr sec 2 */
+.index_sec2_a{
+
+		background: black;
+        padding-right: 2em;
+        width:  35em;
+	
+}
+
+
+.test_test{
+    border: brown 2px solid;
+    color: brown;
+    padding-right: -0em;
+    padding-left: -40em;
+    content
+
+}
+  
+
+/* this end is fpr sec 2 */
   }
 
-/* phone tablet version */
 
 
-
+  /* phone tablet version */
 
 @media screen and (max-width: 600px) {
     .index {
@@ -306,6 +347,7 @@ media queary */
 
     .index_se1_btn1{
         margin-right:-0em;
+        margin-bottom: 1em;
     }
     
     .index_se1_btn2{
@@ -329,6 +371,47 @@ media queary */
     /* this area is for sec */
 
 
+
+    /*this area is fpr sec 2 */
+.index_sec2_a{
+
+    background: black;
+    width: 18em;
+    padding-left: 20px;
+    /* padding-right: 1em;
+    padding-left: 2em; */
+    text-align: center;
+
+}
+
+
+
+.img_q{
+
+	align-items: center;
+    background-color: white;
+
+}
+
+
+/* this end is fpr sec 2 */
+
+
+/* for hier dev */
+
+.hire_form_1{
+    text-align: center;
+
+    width: 19em;
+    margin-left: 12px;
+    
+}
+
+.dev{
+    text-align: center;
+    overflow-wrap: break-word;
+    
+}
   }
 
   
