@@ -268,7 +268,7 @@ media queary */
 
 @media screen and (max-width: 800px) {
     .index {
-      background-color: purple;
+      /* background-color: purple; */
     }
 
 
